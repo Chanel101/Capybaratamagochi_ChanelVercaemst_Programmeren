@@ -61,14 +61,14 @@ function dobbelsteennaam() {
 // functies progressbar
 function gezondheidOmlaag() {
     if (gezondheid > 0) {
-        gezondheid -= 1;
+        gezondheid -= 10;
     }
     gezondheidTekst.textContent = "Gezondheid " + gezondheid + "%";
 }
 
 function hongerOmlaag() {
     if (honger > 0) {
-        honger -= 2;
+        honger -= 10;
     }
     etenTekst.textContent = "Honger " + honger + "%";
 }
@@ -101,7 +101,8 @@ function capyRelax() {
     if (relaxStatus == false) {
         capyVeranderen.src = "images/wellnesscapybara.png";
         relaxStatus = true
-        waterAudio.play()
+        waterAudio.play();
+        gezondheid = 100;
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             relaxStatus = false;
@@ -115,7 +116,13 @@ function capyEten() {
     if (etenStatus == false) {
         capyVeranderen.src = "images/etencapybara.png";
         etenStatus = true
-        etenAudio.play()
+        etenAudio.play();
+        honger = 100;
+        if (poepen + 10 <= 100) {
+            poepen += 10;
+        } else {
+            poepen = 100
+        }
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             etenStatus = false;
@@ -147,6 +154,6 @@ toilet.addEventListener('click', capyToilet);
 
 //intervals
 setInterval(gezondheidOmlaag, 3000);
-setInterval(hongerOmlaag, 1000);
-setInterval(toiletbehoefteOmhoog, 500);
+setInterval(hongerOmlaag, 3000);
+setInterval(toiletbehoefteOmhoog, 2000);
 setInterval(poep, 1000);

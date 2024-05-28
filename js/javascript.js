@@ -35,23 +35,12 @@ let etenAudio = new Audio("sound/munchin.mp3");
 let toiletAudio = new Audio("sound/toilet.mp3");
 //bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
 
-let i = 10;
 
-while (i >= 0) {
-    console.log(i);
-    i -= 1;
-}
-
-for (let i = 4; i > 0; i--) {
-    console.log(i);
-}
-
-//functies
-
+//functies naam
 function naamInput() {
     capyNaam = nameInput.value;
     h2.textContent = "Ik ben " + capyNaam;
-    h1.textContent = "Yaaay, " +capyNaam;
+    h1.textContent = "Yaaay, " + capyNaam;
     nameInput.style.display = "none";
     button.style.display = "none";
     dobbel.style.display = "none";
@@ -65,27 +54,37 @@ function dobbelsteennaam() {
     nameInput.value = capyNaam;
 }
 
-function gezondheidOmlaag(){
+// functies progressbar
+function gezondheidOmlaag() {
     if (gezondheid > 0) {
         gezondheid -= 1;
-    } 
+    }
     gezondheidTekst.textContent = "Gezondheid " + gezondheid + "%";
 }
 
-function hongerOmlaag(){
+function hongerOmlaag() {
     if (honger > 0) {
-        honger -= 1;
-    } 
+        honger -= 2;
+    }
     etenTekst.textContent = "Honger " + honger + "%";
 }
 
-function toiletbehoefteOmhoog(){
+function toiletbehoefteOmhoog() {
     if (poepen < 100) {
-        poepen += 1;
+        poepen += 5;
     }
     toiletTekst.textContent = "Toilet " + poepen + "%";
 }
 
+function poep() {
+    if (toiletbehoefteOmhoog = 100) {
+        capyVeranderen.src = "images/poep1.png"
+    } else {
+        
+    }
+}
+
+//functies buttons 
 function capyRelax() {
     if (relaxStatus == false) {
         capyVeranderen.src = "images/wellnesscapybara.png";
@@ -132,6 +131,7 @@ relax.addEventListener('click', capyRelax);
 eten.addEventListener('click', capyEten);
 toilet.addEventListener('click', capyToilet);
 
-setInterval (gezondheidOmlaag, 2000);
-setInterval (hongerOmlaag, 3000);
-setInterval (toiletbehoefteOmhoog, 5000);
+//intervals
+setInterval(gezondheidOmlaag, 3000);
+setInterval(hongerOmlaag, 1000);
+setInterval(toiletbehoefteOmhoog, 2000);

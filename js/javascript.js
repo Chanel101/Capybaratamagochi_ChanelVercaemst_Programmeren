@@ -29,10 +29,14 @@ let capyVeranderen = document.querySelector("#capybara");
 let relaxStatus = false;
 let etenStatus = false;
 let toiletStatus = false;
+let poepenStatus = false;
 
 let waterAudio = new Audio("sound/watersplash.mp3");
 let etenAudio = new Audio("sound/munchin.mp3");
 let toiletAudio = new Audio("sound/toilet.mp3");
+let poepAudio = new Audio("sound/plop.mp3");
+
+let poepArray = ["/images/poep1.png", "/images/poep2.png", "/images/poep3.png", "/images/poep4.png", "/images/poep5.png"]
 //bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
 
 
@@ -77,11 +81,19 @@ function toiletbehoefteOmhoog() {
 }
 
 function poep() {
-    if (toiletbehoefteOmhoog = 100) {
-        capyVeranderen.src = "images/poep1.png"
-    } else {
-        
+    if (poepen == 100 && poepenStatus == false) {
+        poepPlay()
+       for (let i = 0; i < poepArray.length; i++) {
+        setTimeout(() => {
+            capyVeranderen.src = poepArray[i];
+            poepenStatus = true;
+        }, i * 1000);
+       }
     }
+}
+
+function poepPlay() {
+    poepAudio.play()
 }
 
 //functies buttons 
@@ -115,7 +127,9 @@ function capyToilet() {
     if (toiletStatus == false) {
         capyVeranderen.src = "images/toiletcapybara.png";
         toiletStatus = true;
+        poepenStatus = false;
         toiletAudio.play()
+        poepen = 0;
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             toiletStatus = false;
@@ -134,4 +148,5 @@ toilet.addEventListener('click', capyToilet);
 //intervals
 setInterval(gezondheidOmlaag, 3000);
 setInterval(hongerOmlaag, 1000);
-setInterval(toiletbehoefteOmhoog, 2000);
+setInterval(toiletbehoefteOmhoog, 500);
+setInterval(poep, 1000);

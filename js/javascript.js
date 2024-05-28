@@ -5,6 +5,11 @@ const h1 = document.querySelector("h1");
 const relax = document.querySelector("#relax");
 const eten = document.querySelector("#eten");
 const toilet = document.querySelector("#toilet");
+
+const gezondheidTekst = document.querySelector("#gezondheidProcent");
+const etenTekst = document.querySelector("#hongerProcent");
+const toiletTekst = document.querySelector("#toiletProcent");
+
 const nameInput = document.getElementById("nameInput");
 const button = document.getElementById("buttonnaam");
 const dobbel = document.getElementById("dobbelsteen");
@@ -15,6 +20,11 @@ const h2 = document.querySelector("h2");
 let namenArray = ["Bob", "Rik", "Gert-Jan", "Berta", "Anna", "Casper", "Gerda", "Geertruida", "Margriet", "Titus", "Ingmar", "Ingrid", "Loeta", "Daphne", "Agnes", "Dok", "Jade", "Sophia", "Niels", "Tamara", "Mariska", "Diego", "Javier", "Demi", "Merel", "Mart", "Alexi", "Nilesh", "Lev", "Jasmine", "Valérie"]
 let randomNaam;
 let capyNaam;
+
+let gezondheid = 100;
+let honger = 100;
+let poepen = 0;
+
 let capyVeranderen = document.querySelector("#capybara");
 let relaxStatus = false;
 let etenStatus = false;
@@ -53,6 +63,27 @@ function dobbelsteennaam() {
     let randomNaam = namenArray[randomGetal];
     capyNaam = randomNaam;
     nameInput.value = capyNaam;
+}
+
+function gezondheidOmlaag(){
+    if (gezondheid > 0) {
+        gezondheid -= 1;
+    } 
+    gezondheidTekst.textContent = "Gezondheid " + gezondheid + "%";
+}
+
+function hongerOmlaag(){
+    if (honger > 0) {
+        honger -= 1;
+    } 
+    etenTekst.textContent = "Honger " + honger + "%";
+}
+
+function toiletbehoefteOmhoog(){
+    if (poepen < 100) {
+        poepen += 1;
+    }
+    toiletTekst.textContent = "Toilet " + poepen + "%";
 }
 
 function capyRelax() {
@@ -101,3 +132,6 @@ relax.addEventListener('click', capyRelax);
 eten.addEventListener('click', capyEten);
 toilet.addEventListener('click', capyToilet);
 
+setInterval (gezondheidOmlaag, 2000);
+setInterval (hongerOmlaag, 3000);
+setInterval (toiletbehoefteOmhoog, 5000);

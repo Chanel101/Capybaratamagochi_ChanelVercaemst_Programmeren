@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: auto;
+}
+
+
+body {
+    background-color: beige;
+    background-image: url(../images/achtergrond.png);
+    background-size: 96.5rem 50rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: left;
+    font-family: monospace;
+    font-size: 40px;
+    margin-top: 1rem;
+    margin-left: 4.5rem;
+}
+
+h2 {
+    text-align: center;
+    font-family: monospace;
+    color: #000;
+}
+
+h3 {
+    text-align: center;
+    font-family: monospace;
+    color: #fff;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.box label {
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+    margin-left: 3rem;
+}
+
+.box input {
+    max-width: 8rem;
+    max-height: 1.5rem;
+    margin-top: 8rem;
+}
+
+div button {
+    max-width: 5rem;
+    max-height: 4rem;
+    margin-top: 8rem;
+    margin-left: 0.5rem;
+}
+
+#dobbelsteen img{
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+#buttonnaam {
+    max-height: 3rem;
+    padding: 1rem;
+}
+
+
+#capybara {
+    max-width: 20rem;
+    max-height: 20rem;
+    margin-top: 5rem;
+    margin-left: 35rem;
+    margin-right: 10rem;
+    position: fixed;
+}
+
+/*button relax eten toilet*/
+.buttoncontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttoncontainer button {
+    margin-top: 8.5rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+
+}
+
+section button {
+    margin-top: 5rem;
+    padding: 0.5rem;
+    background-color: #be344b;
+    box-shadow: 0.5rem 0.5rem 0.5rem green;
+}
+
+/*images*/
+section button img {
+    display: flex;
+    flex-direction: row;
+    max-width: 11rem;
+    max-height: 11rem;
+}
+
+/*footer*/
+footer {
+    background-color: #009245;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}

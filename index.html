@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+<!--het linken met de css en met javascript. Daarnaast wordt de javascript pas aan het einde toegepast dankzij defer.-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Capybara</title>
+    <link rel="icon" type="image/x-icon" href="/images/Capybara.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <!--Titel bovenin links van de pagina-->
+        <h1>Mijn capybara</h1>
+        <!--Het invoerveld met dobbelsteen voor een randomnaam en je naam die je kan geven aan je capybara.-->
+            <div class="box">
+                <label for="nameInput">
+                    <h2>Mijn naam is:</h2>
+                </label>
+                <input type="text" name="nameInput" id="nameInput">
+                <button id="dobbelsteen"><img src="images/dobbelsteen.png" alt="dobbelsteen"></button>
+                <button id="buttonnaam">Hallo</button>
+                <img id="capybara" src="images/Capybara.png" alt="Capybara">
+            </div>
+        <!--De buttons waarmee je eten kan geven, naar het toilet kan gaan en je kan je capybara laten rusten.-->
+        <section class="buttoncontainer">
+            <h2></h2>
+            <button id="relax">
+                <h3>RELAX</h3>
+                <img src="images/Relax.png" alt="buttoncapybarainton">
+            </button>
+            <button id="eten">
+                <h3>ETEN</h3>
+                <img src="images/Eten.png" alt="buttoneten">
+            </button>
+            <button id="toilet">
+                <h3>TOILET</h3>
+                <img src="images/toilet.png" alt="buttontoilet">
+            </button>
+        </section>
+
+    </main>
+    <!--De footer met het copyright logo en door wie het gemaakt is.-->
+    <footer>
+        <p>&copy; Mijn Capybara made with 💗 by Chanel</p>
+    </footer>
+</body>
+
+</html>

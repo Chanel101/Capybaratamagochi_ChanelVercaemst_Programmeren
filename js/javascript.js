@@ -93,7 +93,8 @@ function hongerOmlaag() {
 
 //wanneer het percentage 100 is van toiletbehoefte dan gaat de capybara poepen en speelt de lijst af met de afbeeldingen die ik er in heb gezet.
 //Daarnaast speelt hij dan ook een geluid af.
-//bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
+//bron eigen onderzoek geluid: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
+//bron: https://pixabay.com/sound-effects/
 function poep() {
     if (poepen == 100 && poepenStatus == false) {
         for (let i = 0; i < poepArray.length; i++) {
@@ -109,6 +110,8 @@ function poep() {
 //functies buttons
 //De afbeelding veranderd wanneer er op de button gedrukt word en na een tijd van 2000 millisecondes veranderd hij terug naar de originele foto van de capybara.
 //bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
+//bron: https://pixabay.com/sound-effects/
+//bron: Mart heeft me geholpen met ervoor zorgen dat de afbeelding veranderd wanneer ik op een button klik.
 function capyRelax() {
     if (relaxStatus == false) {
         capyVeranderen.src = "images/wellnesscapybara.png";
@@ -127,6 +130,7 @@ function capyRelax() {
 //De afbeelding veranderd wanneer er op de button gedrukt word en na een tijd van 500 millisecondes veranderd hij terug naar de originele foto van de capybara.
 //Daarnaast iedere keer dat er op de button eten gedrukt wordt komt er 10 bij het toiletgebruik percentage, dit zolang toiletgebruik kleiner of gelijk is aan 90.
 //bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
+//bron: https://pixabay.com/sound-effects/
 function capyEten() {
     if (etenStatus == false) {
         capyVeranderen.src = "images/etencapybara.png";
@@ -145,6 +149,7 @@ function capyEten() {
 
 //De afbeelding veranderd wanneer er op de button gedrukt word en na een tijd van 2000 millisecondes veranderd hij terug naar de originele foto van de capybara.
 //bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
+//bron: https://pixabay.com/sound-effects/
 function capyToilet() {
     if (toiletStatus == false) {
         capyVeranderen.src = "images/toiletcapybara.png";

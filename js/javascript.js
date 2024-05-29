@@ -43,7 +43,7 @@ let toiletAudio = new Audio("sound/toilet.mp3");
 let poepAudio = new Audio("sound/plop.mp3");
 
 //Lijst met afbeeldingen die na elkaar afspelen
-let poepArray = ["/images/poep1.png", "/images/poep2.png", "/images/poep3.png", "/images/poep4.png", "/images/poep5.png"]
+let poepArray = ["images/poep1.png", "images/poep2.png", "images/poep3.png", "images/poep4.png", "images/poep5.png"]
 
 //om de capybara in een andere omgeving te hebben
 let state_achtergrond = true

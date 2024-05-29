@@ -5,7 +5,8 @@ const h1 = document.querySelector("h1");
 const relax = document.querySelector("#relax");
 const eten = document.querySelector("#eten");
 const toilet = document.querySelector("#toilet");
-
+const woestijnbtn = document.querySelector("#steen");
+const zeebtn = document.getElementById("zee");
 const gezondheidTekst = document.querySelector("#gezondheidProcent");
 const etenTekst = document.querySelector("#hongerProcent");
 const toiletTekst = document.querySelector("#toiletProcent");
@@ -14,7 +15,7 @@ const nameInput = document.getElementById("nameInput");
 const button = document.getElementById("buttonnaam");
 const dobbel = document.getElementById("dobbelsteen");
 const h2 = document.querySelector("h2");
-
+const body = document.querySelector("body");
 
 //variabele
 let namenArray = ["Bob", "Rik", "Gert-Jan", "Berta", "Anna", "Casper", "Gerda", "Geertruida", "Margriet", "Titus", "Ingmar", "Ingrid", "Loeta", "Daphne", "Agnes", "Dok", "Jade", "Sophia", "Niels", "Tamara", "Mariska", "Diego", "Javier", "Demi", "Merel", "Mart", "Alexi", "Nilesh", "Lev", "Jasmine", "Valérie"]
@@ -38,7 +39,7 @@ let poepAudio = new Audio("sound/plop.mp3");
 
 let poepArray = ["/images/poep1.png", "/images/poep2.png", "/images/poep3.png", "/images/poep4.png", "/images/poep5.png"]
 //bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
-
+let state_achtergrond = true
 
 //functies naam
 function naamInput() {
@@ -58,42 +59,35 @@ function dobbelsteennaam() {
     nameInput.value = capyNaam;
 }
 
+
+function updateTekst() {
+    gezondheidTekst.textContent = "Gezondheid " + gezondheid + "%";
+    etenTekst.textContent = "Honger " + honger + "%";
+    toiletTekst.textContent = "Toilet " + poepen + "%";
+}
 // functies progressbar
 function gezondheidOmlaag() {
     if (gezondheid > 0) {
         gezondheid -= 10;
     }
-    gezondheidTekst.textContent = "Gezondheid " + gezondheid + "%";
 }
 
 function hongerOmlaag() {
     if (honger > 0) {
         honger -= 10;
     }
-    etenTekst.textContent = "Honger " + honger + "%";
-}
-
-function toiletbehoefteOmhoog() {
-    if (poepen < 100) {
-        poepen += 5;
-    }
-    toiletTekst.textContent = "Toilet " + poepen + "%";
 }
 
 function poep() {
     if (poepen == 100 && poepenStatus == false) {
-        poepPlay()
-       for (let i = 0; i < poepArray.length; i++) {
-        setTimeout(() => {
-            capyVeranderen.src = poepArray[i];
-            poepenStatus = true;
-        }, i * 1000);
-       }
+        for (let i = 0; i < poepArray.length; i++) {
+            setTimeout(() => {
+                capyVeranderen.src = poepArray[i];
+                poepAudio.play()
+                poepenStatus = true;
+            }, i * 1500);
+        }
     }
-}
-
-function poepPlay() {
-    poepAudio.play()
 }
 
 //functies buttons 
@@ -106,7 +100,7 @@ function capyRelax() {
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             relaxStatus = false;
-        }, 2000);
+        }, 1000);
     }
 }
 //console.log("poep");
@@ -118,15 +112,13 @@ function capyEten() {
         etenStatus = true
         etenAudio.play();
         honger = 100;
-        if (poepen + 10 <= 100) {
+        if (poepen <= 90) {
             poepen += 10;
-        } else {
-            poepen = 100
         }
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             etenStatus = false;
-        }, 10000);
+        }, 1000);
     }
 }
 
@@ -140,10 +132,33 @@ function capyToilet() {
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             toiletStatus = false;
-        }, 5000);
+        }, 1000);
     }
 }
 //console.log("gaat naar het toilet")
+
+function woestijn() {
+    if (state_achtergrond == true) {
+        body.classList.add('woestijn');
+        zeebtn.style.display ="none";
+        state_achtergrond = false;
+    } else {
+        body.classList.remove('woestijn');
+        zeebtn.style.display = "block";
+        state_achtergrond = true;
+    }
+}
+function zee() {
+    if(state_achtergrond == true) {
+        body.classList.add('zee');
+        woestijnbtn.style.display ="none";
+        state_achtergrond = false;
+    } else {
+        body.classList.remove('zee');
+        woestijnbtn.style.display ="block";
+        state_achtergrond = true;
+    }
+}
 
 //addEventListener
 button.addEventListener("click", naamInput);
@@ -151,9 +166,10 @@ dobbel.addEventListener("click", dobbelsteennaam);
 relax.addEventListener('click', capyRelax);
 eten.addEventListener('click', capyEten);
 toilet.addEventListener('click', capyToilet);
-
+woestijnbtn.addEventListener('click', woestijn);
+zeebtn.addEventListener('click', zee);
 //intervals
-setInterval(gezondheidOmlaag, 3000);
-setInterval(hongerOmlaag, 3000);
-setInterval(toiletbehoefteOmhoog, 2000);
+setInterval(updateTekst, 500);
+setInterval(gezondheidOmlaag, 1000);
+setInterval(hongerOmlaag, 1000);
 setInterval(poep, 1000);

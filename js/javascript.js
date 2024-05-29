@@ -69,7 +69,7 @@ function updateTekst() {
 // functies progressbar
 function gezondheidOmlaag() {
     if (gezondheid > 0) {
-        gezondheid -= 10;
+        gezondheid -= 5;
     }
 }
 
@@ -101,7 +101,7 @@ function capyRelax() {
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             relaxStatus = false;
-        }, 5000);
+        }, 2000);
     }
 }
 //console.log("poep");
@@ -119,7 +119,7 @@ function capyEten() {
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             etenStatus = false;
-        }, 2000);
+        }, 500);
     }
 }
 
@@ -133,7 +133,7 @@ function capyToilet() {
         setTimeout(() => {
             capyVeranderen.src = "images/Capybara.png";
             toiletStatus = false;
-        }, 1000);
+        }, 2000);
     }
 }
 //console.log("gaat naar het toilet")
@@ -177,7 +177,7 @@ woestijnbtn.addEventListener('click', woestijn);
 zeebtn.addEventListener('click', zee);
 //intervals
 setInterval(updateTekst, 500);
-setInterval(gezondheidOmlaag, 1000);
-setInterval(hongerOmlaag, 1000);
+setInterval(gezondheidOmlaag, 5000);
+setInterval(hongerOmlaag, 5000);
 setInterval(poep, 1000);
 setInterval(capydood, 500);

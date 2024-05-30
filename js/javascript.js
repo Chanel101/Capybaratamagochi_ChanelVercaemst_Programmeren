@@ -93,8 +93,11 @@ function hongerOmlaag() {
 
 //wanneer het percentage 100 is van toiletbehoefte dan gaat de capybara poepen en speelt de lijst af met de afbeeldingen die ik er in heb gezet.
 //Daarnaast speelt hij dan ook een geluid af.
+//loop  for wordt gebruikt zodat wanneer de lengte van de poepArray kleiner is dan i dan wordt er iedere keer 1 opgeteld. Dus dan komt er iedere keer een andere afbeelding. 
+//door i * 1500 millisecondes te doen speelt iedere afbeelding van de array af na een bepaalde tijd. Als ik anders gewoon 1500 had geschreven komen alle afbeeldingen op hetzelfde moment en zit er geen pauze tussen.
 //bron eigen onderzoek geluid: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
 //bron: https://pixabay.com/sound-effects/
+//bron: diego voor de tijd tussen de afbeeldingen wanneer de capybara poept.
 function poep() {
     if (poepen == 100 && poepenStatus == false) {
         for (let i = 0; i < poepArray.length; i++) {

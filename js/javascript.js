@@ -54,7 +54,7 @@ let state_achtergrond = true
 function naamInput() {
     capyNaam = nameInput.value;
     h1.textContent = "Yaaay, " + capyNaam;
-    h2.textContent = "Ik ben " + capyNaam;
+    h2.textContent = "Ik ben magische " + capyNaam;
     nameInput.style.display = "none";
     button.style.display = "none";
     dobbel.style.display = "none";

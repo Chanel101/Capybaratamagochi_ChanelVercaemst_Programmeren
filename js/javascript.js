@@ -8,7 +8,7 @@ const h2 = document.getElementById("naamTekst");
 const relax = document.querySelector("#relax");
 const eten = document.querySelector("#eten");
 const toilet = document.querySelector("#toilet");
-const woestijnbtn = document.querySelector("#steen");
+const woestijnbtn = document.getElementById("steen");
 const zeebtn = document.getElementById("zee");
 //Tekst bij de progress
 const gezondheidTekst = document.querySelector("#gezondheidProcent");

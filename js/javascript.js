@@ -78,6 +78,7 @@ function updateTekst() {
 }
 // functies progressbar
 //Deze functie zorgt er voor dat de variabele gezondheid verlaagt met 5 wanneer die groter is dan 0.
+//bron: samen met Mariska ben ik hier op gekomen.
 function gezondheidOmlaag() {
     if (gezondheid > 0) {
         gezondheid -= 5;
@@ -95,6 +96,7 @@ function hongerOmlaag() {
 //Daarnaast speelt hij dan ook een geluid af.
 //loop  for wordt gebruikt zodat wanneer de lengte van de poepArray kleiner is dan i dan wordt er iedere keer 1 opgeteld. Dus dan komt er iedere keer een andere afbeelding. 
 //door i * 1500 millisecondes te doen speelt iedere afbeelding van de array af na een bepaalde tijd. Als ik anders gewoon 1500 had geschreven komen alle afbeeldingen op hetzelfde moment en zit er geen pauze tussen.
+//bron: chatgpt voor het veranderen van de tijd zodat hij de afbeeldingen niet tegelijk afspeelt, prompt: de code van de function poep en leg mij uit wat hier gebeurt. https://chatgpt.com/c/55369efc-855c-47ed-b0d7-c3f638645462 
 //bron eigen onderzoek geluid: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984
 //bron: https://pixabay.com/sound-effects/
 //bron: diego voor de tijd tussen de afbeeldingen wanneer de capybara poept.

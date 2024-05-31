@@ -8,8 +8,8 @@ const h2 = document.getElementById("naamTekst");
 const relax = document.querySelector("#relax");
 const eten = document.querySelector("#eten");
 const toilet = document.querySelector("#toilet");
-const woestijnbtn = document.getElementById("steen");
-const zeebtn = document.getElementById("zee");
+const woestijnBtn = document.getElementById("steen");
+const zeeBtn = document.getElementById("zee");
 //Tekst bij de progress
 const gezondheidTekst = document.querySelector("#gezondheidProcent");
 const etenTekst = document.querySelector("#hongerProcent");
@@ -21,7 +21,7 @@ const dobbel = document.getElementById("dobbelsteen");
 
 //variabele
 //naam kunnen randomizen voor de capybara met een lijst
-let namenArray = ["Bob", "Rik", "Gert-Jan", "Berta", "Anna", "Casper", "Gerda", "Geertruida", "Margriet", "Titus", "Ingmar", "Ingrid", "Loeta", "Daphne", "Agnes", "Dok", "Jade", "Sophia", "Niels", "Tamara", "Mariska", "Diego", "Javier", "Demi", "Merel", "Mart", "Alexi", "Nilesh", "Lev", "Jasmine", "Valérie"]
+let namenArray = ["Bob", "Rik", "Gert-Jan", "Berta", "Anna", "Casper", "Gerda", "Geertruida", "Margriet", "Titus", "Ingmar", "Ingrid", "Loeta", "Daphne", "Agnes", "Dok", "Jade", "Sophia", "Niels", "Tamara", "Mariska", "Diego", "Javier", "Demi", "Merel", "Mart", "Alexi", "Nilesh", "Lev", "Jasmine", "Valérie"];
 let randomNaam;
 let capyNaam;
 //progress procent
@@ -43,10 +43,10 @@ let toiletAudio = new Audio("sound/toilet.mp3");
 let poepAudio = new Audio("sound/plop.mp3");
 
 //Lijst met afbeeldingen die na elkaar afspelen
-let poepArray = ["images/poep1.png", "images/poep2.png", "images/poep3.png", "images/poep4.png", "images/poep5.png"]
+let poepArray = ["images/poep1.png", "images/poep2.png", "images/poep3.png", "images/poep4.png", "images/poep5.png"];
 
 //om de capybara in een andere omgeving te hebben
-let state_achtergrond = true
+let state_achtergrond = true;
 
 //functies naam
 // bron:Mariska, voor de display van de buttons. Ik wou ze graag weg hebben wanneer je een naam hebt gekozen zodat je een vaste naam krijgt voor je capybara. Daarom gebruik ik wanneer h1 en h2 veranderen dat buttons die naast het Input veld staan dat die verdwijnen.
@@ -120,7 +120,7 @@ function poep() {
 function capyRelax() {
     if (relaxStatus == false) {
         capyVeranderen.src = "images/wellnesscapybara.png";
-        relaxStatus = true
+        relaxStatus = true;
         waterAudio.play();
         gezondheid = 100;
         setTimeout(() => {
@@ -139,7 +139,7 @@ function capyRelax() {
 function capyEten() {
     if (etenStatus == false) {
         capyVeranderen.src = "images/etencapybara.png";
-        etenStatus = true
+        etenStatus = true;
         etenAudio.play();
         honger = 100;
         if (poepen <= 90) {
@@ -173,7 +173,7 @@ function capyToilet() {
 function woestijn() {
     if (state_achtergrond == true) {
         body.classList.add('woestijn');
-        zeebtn.style.display = "none";
+        zeeBtn.style.display = "none";
         state_achtergrond = false;
     } else {
         body.classList.remove('woestijn');
@@ -186,7 +186,7 @@ function woestijn() {
 function zee() {
     if (state_achtergrond == true) {
         body.classList.add('zee');
-        woestijnbtn.style.display = "none";
+        woestijnBtn.style.display = "none";
         state_achtergrond = false;
     } else {
         body.classList.remove('zee');
@@ -208,8 +208,8 @@ dobbel.addEventListener("click", dobbelsteennaam);
 relax.addEventListener('click', capyRelax);
 eten.addEventListener('click', capyEten);
 toilet.addEventListener('click', capyToilet);
-woestijnbtn.addEventListener('click', woestijn);
-zeebtn.addEventListener('click', zee);
+woestijnBtn.addEventListener('click', woestijn);
+zeeBtn.addEventListener('click', zee);
 
 //intervals
 setInterval(updateTekst, 500);

@@ -30,16 +30,12 @@ h1 {
     margin-left: 4.5rem;
 }
 
-h2 {
+label span {
     text-align: center;
     font-family: monospace;
+    font-size: 20px;
+    font-weight: 900;
     color: #000;
-}
-
-h3 {
-    text-align: center;
-    font-family: monospace;
-    color: #fff;
 }
 
 .box {
@@ -106,6 +102,14 @@ div button {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.buttoncontainer span {
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 1000;
+    color: #fff;
 }
 
 .buttoncontainer button {

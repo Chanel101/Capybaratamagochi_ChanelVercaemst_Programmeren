@@ -3,7 +3,7 @@
 //constante
 const body = document.querySelector("body");
 const h1 = document.querySelector("h1");
-const h2 = document.querySelector("h2");
+const h2 = document.getElementById("naamTekst");
 //buttons onder de capybara
 const relax = document.querySelector("#relax");
 const eten = document.querySelector("#eten");

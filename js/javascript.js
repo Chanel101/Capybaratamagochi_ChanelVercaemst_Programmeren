@@ -53,8 +53,8 @@ let state_achtergrond = true
 //de nameInput.value haalt de waarde op van wat de gebruiker in het Inputveld heeft getypt.
 function naamInput() {
     capyNaam = nameInput.value;
-    h1.textContent = "Yaaay, " + capyNaam;
-    h2.textContent = "Ik ben magische " + capyNaam;
+    h1.textContent = "Yaaay, " + capyNaam + ".";
+    h2.textContent = "Ik ben magische " + capyNaam + ".";
     nameInput.style.display = "none";
     button.style.display = "none";
     dobbel.style.display = "none";

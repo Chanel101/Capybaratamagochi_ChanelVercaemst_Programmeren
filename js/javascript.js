@@ -177,7 +177,7 @@ function woestijn() {
         state_achtergrond = false;
     } else {
         body.classList.remove('woestijn');
-        zeebtn.style.display = "block";
+        zeeBtn.style.display = "block";
         state_achtergrond = true;
     }
 }
@@ -190,7 +190,7 @@ function zee() {
         state_achtergrond = false;
     } else {
         body.classList.remove('zee');
-        woestijnbtn.style.display = "block";
+        woestijnBtn.style.display = "block";
         state_achtergrond = true;
     }
 }
